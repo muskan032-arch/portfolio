@@ -1,4 +1,4 @@
 # portfolio
   Muskan kushwaha
   <br>
-  This is my  first website . portfoli website we repesent my introduction and my skills.
+  This is my  first website . portfolio website we repesent our introduction and our skills.
