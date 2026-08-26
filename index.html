@@ -1,290 +1,1250 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kushwaha - Portfolio</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <meta name="description"
+        content="Muskan Kushwaha - Frontend Developer Portfolio. Explore my skills, projects and experience in modern web development.">
+
+    <meta name="keywords"
+        content="Muskan Kushwaha, Frontend Developer, React Developer, JavaScript, TypeScript, Tailwind CSS, Web Developer">
+
+    <meta name="author" content="Muskan Kushwaha">
+
+    <title>Muskan Kushwaha | Frontend Developer</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <style>
+
+        /* ==============================
+           GLOBAL
+        ============================== */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: "Poppins", sans-serif;
         }
 
-        body {
-            background-color: #1e1e2e;
-            color: #ffffff;
+        html {
             scroll-behavior: smooth;
         }
 
+        body {
+            background: #1e1e2e;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        section {
+            scroll-margin-top: 80px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
         header {
-            background-color: #26263f;
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+            background: rgba(38, 38, 63, 0.95);
+            backdrop-filter: blur(10px);
+
+            padding: 18px 0;
+
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
         }
 
         nav {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
         }
 
-        nav .logo {
-            font-size: 1.8rem;
-            font-weight: 600;
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 700;
             color: #ff9f43;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-        }
-
-        nav ul li {
-            margin: 0 15px;
+            gap: 30px;
         }
 
         nav ul li a {
             color: #ffffff;
-            text-decoration: none;
             font-weight: 400;
-            transition: color 0.3s;
+            transition: 0.3s;
         }
 
         nav ul li a:hover {
             color: #ff9f43;
         }
 
-        /* Hero Section */
-        .hero {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 90vh;
-            padding: 0 10%;
+        .menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ffffff;
         }
 
-        .hero .hero-content {
-            max-width: 600px;
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 60px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-subtitle {
+            color: #ff9f43;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
             color: #ff9f43;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #ddd;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            margin: 20px 0;
-            font-size: 1.2rem;
-            line-height: 1.6;
+            max-width: 650px;
+            color: #cfcfd8;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
         }
 
-        .hero .btn {
-            background-color: #ff9f43;
-            color: #1e1e2e;
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-size: 1rem;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-
-        .hero .btn:hover {
-            background-color: #e07c2f;
-        }
-
-        .hero img {
-            width: 400px;
-            border-radius: 50%;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        /* About Section */
-        .about {
-            padding: 80px 10%;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #ff9f43;
-        }
-
-        .about p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Skills Section */
-        .skills {
-            padding: 80px 10%;
-            background-color: #26263f;
-        }
-
-        .skills h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #ff9f43;
-            margin-bottom: 40px;
-        }
-
-        .skills .skill-list {
+        .hero-buttons {
             display: flex;
-            justify-content: center;
+            gap: 15px;
             flex-wrap: wrap;
-            gap: 20px;
         }
 
-        .skills .skill {
-            background-color: #1e1e2e;
-            padding: 20px;
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 12px 24px;
+
             border-radius: 8px;
-            text-align: center;
-            width: 150px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
+
+            font-weight: 600;
+
+            transition: 0.3s;
         }
 
-        .skills .skill i {
-            font-size: 3rem;
+        .primary-btn {
+            background: #ff9f43;
+            color: #1e1e2e;
+        }
+
+        .primary-btn:hover {
+            background: #e07c2f;
+            transform: translateY(-3px);
+        }
+
+        .secondary-btn {
+            border: 1px solid #ff9f43;
+            color: #ff9f43;
+        }
+
+        .secondary-btn:hover {
+            background: #ff9f43;
+            color: #1e1e2e;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            flex: 0 0 380px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 350px;
+            height: 350px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid #ff9f43;
+
+            box-shadow:
+                0 0 30px rgba(255, 159, 67, 0.25),
+                0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+
+        /* ==============================
+           SECTION COMMON
+        ============================== */
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
             color: #ff9f43;
             margin-bottom: 10px;
         }
 
-        .skills .skill:hover {
-            transform: translateY(-10px);
-        }
-
-        /* Footer */
-        footer {
-            background-color: #26263f;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        footer p {
+        .section-title p {
             color: #aaa;
         }
 
-        footer .social-icons a {
-            color: #ff9f43;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s;
+
+        /* ==============================
+           ABOUT
+        ============================== */
+
+        .about {
+            background: #26263f;
         }
 
-        footer .social-icons a:hover {
-            color: #ffffff;
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
         }
+
+        .about-content p {
+            color: #d2d2da;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        .about-highlights {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .highlight {
+            background: #1e1e2e;
+            padding: 20px 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 159, 67, 0.15);
+        }
+
+        .highlight i {
+            color: #ff9f43;
+            margin-right: 8px;
+        }
+
+
+        /* ==============================
+           SKILLS
+        ============================== */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(160px, 1fr));
+
+            gap: 20px;
+        }
+
+        .skill {
+            background: #26263f;
+
+            padding: 30px 20px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            border: 1px solid transparent;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+            border-color: #ff9f43;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .skill i {
+            font-size: 3rem;
+            color: #ff9f43;
+            margin-bottom: 15px;
+        }
+
+        .skill h3 {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+
+        /* ==============================
+           PROJECTS
+        ============================== */
+
+        .projects {
+            background: #26263f;
+        }
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #1e1e2e;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff9f43;
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            color: #ff9f43;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #ff9f43;
+            font-weight: 500;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ==============================
+           CONTACT
+        ============================== */
+
+        .contact-container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+
+            padding: 14px 16px;
+
+            border: none;
+            outline: none;
+
+            border-radius: 8px;
+
+            background: #26263f;
+            color: #ffffff;
+
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border: 1px solid #ff9f43;
+        }
+
+        .contact-form button {
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        #status-message {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            background: #26263f;
+            padding: 35px 0;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin-bottom: 15px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 42px;
+            height: 42px;
+
+            margin: 0 6px;
+
+            border-radius: 50%;
+
+            color: #ff9f43;
+
+            border: 1px solid #ff9f43;
+
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: #ff9f43;
+            color: #1e1e2e;
+            transform: translateY(-4px);
+        }
+
+        footer p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                justify-content: center;
+                padding: 70px 0;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                flex: none;
+            }
+
+            .hero-image img {
+                width: 280px;
+                height: 280px;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            nav ul {
+                display: none;
+
+                position: absolute;
+
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+
+                flex-direction: column;
+
+                background: #26263f;
+
+                padding: 20px;
+
+                text-align: center;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .hero-image img {
+                width: 230px;
+                height: 230px;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
-    <!-- Header Section -->
+
+
+    <!-- ==============================
+         HEADER
+    ============================== -->
+
     <header>
+
         <nav>
-            <div class="logo">Muskan's Portfolio</div>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+
+            <div class="logo">
+                Muskan.
+            </div>
+
+            <ul id="nav-menu">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
             </ul>
+
+            <div class="menu-btn" id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+
         </nav>
+
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
+
+
+    <!-- ==============================
+         HERO
+    ============================== -->
+
+    <section id="home" class="hero container">
+
         <div class="hero-content">
-            <h1>Hello, I'm <span>Muskan Kushwaha</span></h1>
-            <p>I am a passionate software developer with skills in web development, app development, and more. Let's build something amazing together!</p>
-            <a href="Final_Resume_Muskan_Kushwaha.docx" class="btn">Download Resume</a>
+
+            <div class="hero-subtitle">
+                👋 Welcome to my portfolio
+            </div>
+
+            <h1>
+                Hi, I'm
+                <span>Muskan Kushwaha</span>
+            </h1>
+
+            <h2>
+                Frontend Developer & MCA Student
+            </h2>
+
+            <p>
+                I build modern, responsive and user-friendly web
+                experiences using React, JavaScript, TypeScript,
+                Tailwind CSS and modern frontend technologies.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="Final_Resume_Muskan_Kushwaha.docx"
+                    class="btn primary-btn"
+                    download
+                >
+                    <i class="fas fa-download"></i>
+                    Download Resume
+                </a>
+
+                <a
+                    href="#projects"
+                    class="btn secondary-btn"
+                >
+                    View My Work
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </div>
+
         </div>
-        <img src="1728221108807.jpg" alt="Muskan's Photo">
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>
-            I am a Bachelor of Computer Applications student with a strong foundation in programming languages like Java, C++, Python, and web technologies. I love creating dynamic and responsive applications.
-        </p>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <h2>Skills</h2>
-        <div class="skill-list">
-            <div class="skill"><i class="fab fa-html5"></i> HTML</div>
-            <div class="skill"><i class="fab fa-css3-alt"></i> CSS</div>
-            <div class="skill"><i class="fab fa-js-square"></i> JavaScript</div>
-            <div class="skill"><i class="fab fa-java"></i> Java</div>
-            <div class="skill"><i class="fab fa-python"></i> Python</div>
-            <div class="skill"><i class="fab fa-react"></i> React</div>
+        <div class="hero-image">
+
+            <img
+                src="1728221108807.jpg"
+                alt="Muskan Kushwaha"
+            >
+
         </div>
+
     </section>
 
-    <!-- Footer -->
+
+
+    <!-- ==============================
+         ABOUT
+    ============================== -->
+
+    <section id="about" class="section about">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>About Me</h2>
+
+                <p>
+                    A little about my journey
+                </p>
+
+            </div>
+
+
+            <div class="about-content">
+
+                <p>
+                    I am an MCA student and frontend developer
+                    passionate about creating clean, responsive
+                    and engaging web applications.
+                </p>
+
+                <p>
+                    My current focus is strengthening my frontend
+                    development skills with React, JavaScript,
+                    TypeScript and modern CSS frameworks while
+                    continuously exploring the wider IT industry.
+                </p>
+
+                <div class="about-highlights">
+
+                    <div class="highlight">
+                        <i class="fas fa-code"></i>
+                        Frontend Development
+                    </div>
+
+                    <div class="highlight">
+                        <i class="fas fa-laptop-code"></i>
+                        React Applications
+                    </div>
+
+                    <div class="highlight">
+                        <i class="fas fa-mobile-alt"></i>
+                        Responsive Design
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         SKILLS
+    ============================== -->
+
+    <section id="skills" class="section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>My Skills</h2>
+
+                <p>
+                    Technologies I work with
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+
+                <div class="skill">
+
+                    <i class="fab fa-html5"></i>
+
+                    <h3>HTML5</h3>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <i class="fab fa-css3-alt"></i>
+
+                    <h3>CSS3</h3>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <i class="fab fa-js"></i>
+
+                    <h3>JavaScript</h3>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <i class="fab fa-react"></i>
+
+                    <h3>React.js</h3>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <i class="fas fa-code"></i>
+
+                    <h3>TypeScript</h3>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <i class="fas fa-wind"></i>
+
+                    <h3>Tailwind CSS</h3>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <i class="fab fa-node-js"></i>
+
+                    <h3>Node.js</h3>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <i class="fas fa-server"></i>
+
+                    <h3>REST APIs</h3>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <i class="fab fa-git-alt"></i>
+
+                    <h3>Git</h3>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <i class="fab fa-github"></i>
+
+                    <h3>GitHub</h3>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <i class="fas fa-database"></i>
+
+                    <h3>MySQL</h3>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <i class="fas fa-mobile-screen-button"></i>
+
+                    <h3>Responsive Design</h3>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         PROJECTS
+    ============================== -->
+
+    <section id="projects" class="section projects">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Projects</h2>
+
+                <p>
+                    Some of my recent work
+                </p>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+
+                <div class="project-card">
+
+                    <div class="project-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+
+                    <h3>CareerSprout</h3>
+
+                    <p>
+                        A modern career exploration platform
+                        built with React and Tailwind CSS
+                        to help users explore career paths
+                        and growth opportunities.
+                    </p>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <div class="project-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+
+                    <h3>SEO Module</h3>
+
+                    <p>
+                        A web-based SEO management platform
+                        containing multiple modules for
+                        managing and analyzing SEO activities.
+                    </p>
+
+                    <a
+                        href="https://tn-seo-module.web.app/"
+                        target="_blank"
+                        class="project-link"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <div class="project-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+
+                    <h3>AI Sign Language Recognition</h3>
+
+                    <p>
+                        An AI-based project focused on
+                        recognizing sign language and
+                        converting hand gestures into
+                        meaningful information.
+                    </p>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         CONTACT
+    ============================== -->
+
+    <section id="contact" class="section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Contact Me</h2>
+
+                <p>
+                    Let's build something together
+                </p>
+
+            </div>
+
+
+            <div class="contact-container">
+
+                <form
+                    id="contact-form"
+                    class="contact-form"
+                >
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Your Email"
+                        required
+                    >
+
+                    <textarea
+                        id="message"
+                        placeholder="Your Message"
+                        required
+                    ></textarea>
+
+
+                    <button
+                        type="submit"
+                        class="btn primary-btn"
+                    >
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+
+                    <div id="status-message"></div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
     <footer>
+
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/muskan-kushwaha-4b81a82b0" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.github.com/muskan032-arch" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/mus_kan_032" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.gmail.com/muskankushwaha032@gmail.com" target="_blank"><i class="fab fa-gmail"></i></a>
+
+            <a
+                href="https://www.linkedin.com/in/muskan-kushwaha-4b81a82b0"
+                target="_blank"
+                aria-label="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+
+
+            <a
+                href="https://github.com/muskan032-arch"
+                target="_blank"
+                aria-label="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+
+
+            <a
+                href="https://www.instagram.com/mus_kan_032"
+                target="_blank"
+                aria-label="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+
+
+            <a
+                href="mailto:muskankushwaha032@gmail.com"
+                aria-label="Email"
+            >
+                <i class="fas fa-envelope"></i>
+            </a>
+
         </div>
-        <p>&copy; 2024 Muskan Kushwaha. All Rights Reserved.</p>
+
+
+        <p>
+            &copy; 2026 Muskan Kushwaha.
+            All Rights Reserved.
+        </p>
+
     </footer>
-    
-    
-    
-      <script>
-        document.getElementById("contact-form").addEventListener("submit", async (e) => {
-          e.preventDefault();
-      
-          const name = document.getElementById("name").value;
-          const email = document.getElementById("email").value;
-          const message = document.getElementById("message").value;
-          const statusMessage = document.getElementById("status-message");
-      
-          try {
-            const response = await fetch("/send-email", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ name, email, message }),
-            });
-      
-            if (response.ok) {
-              statusMessage.textContent = "Email sent successfully!";
-              statusMessage.style.color = "green";
-            } else {
-              statusMessage.textContent = "Failed to send email.";
-              statusMessage.style.color = "red";
-            }
-          } catch (error) {
-            console.error(error);
-            statusMessage.textContent = "An error occurred.";
-            statusMessage.style.color = "red";
-          }
+
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    ============================== -->
+
+    <script>
+
+        /* Mobile Menu */
+
+        const menuBtn =
+            document.getElementById("menu-btn");
+
+        const navMenu =
+            document.getElementById("nav-menu");
+
+
+        menuBtn.addEventListener("click", () => {
+
+            navMenu.classList.toggle("active");
+
         });
-      </script>
-      
+
+
+        /* Close Mobile Menu */
+
+        document
+            .querySelectorAll("#nav-menu a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navMenu.classList.remove("active");
+
+                });
+
+            });
+
+
+        /* Contact Form */
+
+        document
+            .getElementById("contact-form")
+            .addEventListener("submit", async (e) => {
+
+                e.preventDefault();
+
+
+                const name =
+                    document.getElementById("name").value;
+
+                const email =
+                    document.getElementById("email").value;
+
+                const message =
+                    document.getElementById("message").value;
+
+                const statusMessage =
+                    document.getElementById("status-message");
+
+
+                statusMessage.textContent =
+                    "Sending message...";
+
+                statusMessage.style.color =
+                    "#ff9f43";
+
+
+                try {
+
+                    const response =
+                        await fetch("/send-email", {
+
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+                                name,
+                                email,
+                                message
+                            })
+
+                        });
+
+
+                    if (response.ok) {
+
+                        statusMessage.textContent =
+                            "Message sent successfully!";
+
+                        statusMessage.style.color =
+                            "#4ade80";
+
+                        document
+                            .getElementById("contact-form")
+                            .reset();
+
+                    } else {
+
+                        statusMessage.textContent =
+                            "Failed to send message.";
+
+                        statusMessage.style.color =
+                            "#ef4444";
+
+                    }
+
+
+                } catch (error) {
+
+                    console.error(error);
+
+                    statusMessage.textContent =
+                        "Unable to send message. Please try again later.";
+
+                    statusMessage.style.color =
+                        "#ef4444";
+
+                }
+
+            });
+
+    </script>
 
 </body>
 
 </html>
+```
+
